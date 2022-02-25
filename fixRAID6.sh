@@ -21,7 +21,7 @@ zypper --non-interactive --gpg-auto-import-keys refresh
 
 echo "Upgrading kernel..."
 
-zypper -n up --no-recommends --allow-vendor-change
+zypper up --no-recommends --allow-vendor-change -y
 
 
 read -t 25 -N 1 -p "Waiting 25 seconds before reboot.  Press any key to cancel reboot..." answer
