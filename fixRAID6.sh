@@ -3,13 +3,21 @@ if test "$(id -u)" -ne 0 ; then
     sudo "$0" "$1"
     exit $?
 fi
-echo "Enabling unsupported BTRFS features..."
 
-#Enable unsupported BTRFS options
-echo "options btrfs allow_unsupported=1"  > /etc/modprobe.d/02-btrfs.conf
+read -t 25 -N 1 -p "Do you wish to enable unsupported BTRFS features? (y)yes:" >
 
-echo "Rebuilding initrd..."
-mkinitrd
+echo ""
+
+if [ "${unSup,,}" == "y" ]
+then
+    echo "Enabling unsupported BTRFS features..."
+
+    #Enable unsupported BTRFS options
+    echo "options btrfs allow_unsupported=1"  > /etc/modprobe.d/02-btrfs.conf
+
+    echo "Rebuilding initrd..."
+    mkinitrd
+fi
 
 echo "Installing stable kernel backport..."
 
@@ -23,10 +31,7 @@ echo "Upgrading kernel..."
 
 zypper --non-interactive up --no-recommends --allow-vendor-change
 
-
 read -t 25 -N 1 -p "Waiting 25 seconds before reboot.  Press any key to cancel reboot..." answer
-
-echo "${answer,,}"
 
 if test -z "${answer,,}"
 then
