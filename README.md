@@ -7,6 +7,7 @@ This code was in part defived from my experiences trying to re-enable RAID 6 on 
 https://rockstor.com/docs/howtos/stable_kernel_backport.html
 
 They offer a full reasoning an instructions on how to impliment this manually, and this script is ecentially automating the process they outlined.
+I highly recommend reading it so that you understand what is happening.
 
 I am in no way affiliated with the Rockstor team and this script is my own.  If you choose to run it you do so at your own will and knowing that it has the potential to damage your system and you take responsability for this.
 
