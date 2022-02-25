@@ -1,7 +1,9 @@
 # fixRAID6
 Simple script for enabling RAID5 and 6 on Rockstor 4.1.0.0 by enabling "unsupported" BTRFS features and installing stable kernel backports.
 
-This script is written to be a lazy way to reenable RAID5/6 on installs where it has been disabled by the upstream OpenSUSE image and to install stable kernel backports to gain new and improved BRFS support.
+This script is written to be a lazy way to re-enable RAID5/6 on installs where it has been disabled by the upstream OpenSUSE image and to install stable kernel backports to gain new and improved BRFS support.
+
+NOTE: This script enables unsupported BTRFS modes AND installs kernel backports.  On the newer kenel, it should not be nessary to enable unsupported BTRFS options.  As such, this could cause stability issues.
 
 This code was in part defived from my experiences trying to re-enable RAID 6 on my NAS unit and in part derived from the fantastic kernel backport instalation instructions put out by the rockstor team that are available here.
 https://rockstor.com/docs/howtos/stable_kernel_backport.html
