@@ -4,7 +4,7 @@ if test "$(id -u)" -ne 0 ; then
     exit $?
 fi
 
-read -t 25 -N 1 -p "Do you wish to enable unsupported BTRFS features? (y)yes:" >
+read -t 25 -N 1 -p "Do you wish to enable unsupported BTRFS features? (y)yes:" unSup
 
 echo ""
 
